@@ -1079,11 +1079,7 @@ QImage WebPage::renderImage()
     QSize viewportSize = m_customWebPage->viewportSize();
     m_customWebPage->setViewportSize(contentsSize);
 
-#ifdef Q_OS_WIN
     QImage::Format format = QImage::Format_ARGB32_Premultiplied;
-#else
-    QImage::Format format = QImage::Format_ARGB32;
-#endif
 
     QImage buffer(frameRect.size(), format);
     buffer.fill(Qt::transparent);
